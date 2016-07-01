@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Express 2013 for Windows Desktop
+VisualStudioVersion = 12.0.30723.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Algorithm", "TimeSeriesAnalyze\Algorithm.csproj", "{21903D0E-70A7-4F3B-A20D-22122EC8C935}"
+EndProject
+Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "Parser", "Parser\Parser.pyproj", "{2CFAA940-BD7A-4075-B57F-AE849B990634}"
+EndProject
+Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "SeriesFilter", "SeriesFilter\SeriesFilter.pyproj", "{D84B14E8-BA75-4376-8F6D-4B07D3AAFC26}"
+EndProject
+Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "Plot", "Plot\Plot.pyproj", "{5840B6AC-CA23-47CB-AA7B-EE4EA596AC00}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{21903D0E-70A7-4F3B-A20D-22122EC8C935}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{21903D0E-70A7-4F3B-A20D-22122EC8C935}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{21903D0E-70A7-4F3B-A20D-22122EC8C935}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{21903D0E-70A7-4F3B-A20D-22122EC8C935}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2CFAA940-BD7A-4075-B57F-AE849B990634}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2CFAA940-BD7A-4075-B57F-AE849B990634}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D84B14E8-BA75-4376-8F6D-4B07D3AAFC26}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D84B14E8-BA75-4376-8F6D-4B07D3AAFC26}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5840B6AC-CA23-47CB-AA7B-EE4EA596AC00}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5840B6AC-CA23-47CB-AA7B-EE4EA596AC00}.Release|Any CPU.ActiveCfg = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
