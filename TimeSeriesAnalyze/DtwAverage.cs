@@ -15,23 +15,20 @@ namespace TimeSeriesAnalyze
 
         public static Tuple<decimal, Tuple<int, int>>[,] Dtw(decimal[] a, decimal[] b)
         {
-            int a_length = a.Count();
-            int b_length = b.Count();
-
-            Tuple<decimal, Tuple<int, int>>[,] m = new Tuple<decimal, Tuple<int, int>>[a_length + 1, b_length + 1];
+            Tuple<decimal, Tuple<int, int>>[,] m = new Tuple<decimal, Tuple<int, int>>[a.Length + 1, b.Length + 1];
 
             m[1, 1] = new Tuple<decimal, Tuple<int, int>>(Dist(a[0], b[0]), new Tuple<int, int>(0, 0));
-            for (int i = 2; i <= a_length; i++)
+            for (int i = 2; i <= a.Length; i++)
             {
                 m[i, 1] = new Tuple<decimal, Tuple<int, int>>(m[i - 1, 1].Item1 + Dist(a[i - 1], b[0]), new Tuple<int, int>(i - 1, 1));
             }
-            for (int i = 2; i <= b_length; i++)
+            for (int i = 2; i <= b.Length; i++)
             {
                 m[1, i] = new Tuple<decimal, Tuple<int, int>>(m[1, i - 1].Item1 + Dist(a[0], b[i - 1]), new Tuple<int, int>(1, i - 1));
             }
-            for (int i = 2; i <= a_length; i++)
+            for (int i = 2; i <= a.Length; i++)
             {
-                for (int j = 2; j <= b_length; j++)
+                for (int j = 2; j <= b.Length; j++)
                 {
                     var prec = new List<Tuple<decimal, Tuple<int, int>>>() { m[i - 1, j], m[i, j - 1], m[i - 1, j - 1] };
                     var mini = prec.Min(a1 => a1.Item1);
@@ -44,6 +41,11 @@ namespace TimeSeriesAnalyze
                 }
             }
             return m;
+        }
+
+        public static decimal Dtw2(decimal[] a, decimal[] b)
+        {
+            return Dtw(a, b)[a.Length, b.Length].Item1;
         }
 
         public static decimal[] Average(decimal[][] s)

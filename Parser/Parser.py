@@ -7,7 +7,7 @@ from datetime import datetime
 import numpy as np
 import sys
 
-def parse_from_csv(reader, win_length, win_shift, prec):
+def parse_from_csv(reader, win_length, win_shift, radius, prec):
 	d = {}
 	for row in reader:
 		t1 = row[6]
@@ -29,11 +29,19 @@ def parse_from_csv(reader, win_length, win_shift, prec):
 	
 	
 	serie = np.array(map(lambda x: x[0] / x[1], d.values()))
-	ret = []
-	
-	i = 0
+	smooth = np.zeros(serie.shape)
 	size = len(serie)
-		
+
+	for j in range(size):
+		amount = 0
+		for k in range(max(j-radius, 0), min(j+radius, size)):
+			smooth[j] += serie[k]
+			amount += 1
+		smooth[j] /= amount
+
+	serie = smooth
+	ret = []
+	i = 0
 
 	while i + win_length <= size:
 		tmp = serie[i:i+win_length]
@@ -55,9 +63,9 @@ def main(argv):
 	csvfile = open('t_TradeReport.csv', 'rb')
 	reader = csv.reader(csvfile)
 
-	data = parse_from_csv(reader, 100, 5, 5)
+	data = parse_from_csv(reader, 200, 5, 4, 1)
 	
-	np.savetxt("result_smarter.csv", data, delimiter=",")
+	np.savetxt("output.csv", data, delimiter=",")
 	pass
 
 if __name__ == '__main__':

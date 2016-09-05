@@ -5,10 +5,10 @@ import os
 
 def main(argv):
 
-	data = np.genfromtxt("sample_input.csv", delimiter = ',')
+	data = np.genfromtxt("centers.csv", delimiter = ',')
 	
 	for i in range(data.shape[0]):
-		outputPath = "output/" + str(i) + ".png"
+		outputPath = "centers/" + str(i) + ".png"
 		plt.plot(data[i])
 		plt.savefig(outputPath)
 		plt.clf()

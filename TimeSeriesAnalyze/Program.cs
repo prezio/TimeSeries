@@ -10,23 +10,14 @@ namespace TimeSeriesAnalyze
 {
     class Program
     {
-        public static void Main()
+        public static void Main(string[] args)
         {
-            var reader = new StreamReader(File.OpenRead("sample_input.csv"));
-            List<decimal[]> series = new List<decimal[]>();
-
-            while (!reader.EndOfStream)
-            {
-                var line = reader.ReadLine();
-                var values = line.Split(',').Select(i => Decimal.Parse(i, NumberStyles.Any, CultureInfo.InvariantCulture)).ToArray();
-                series.Add(values);
-            }
-
-            var input = series.ToArray();
-            using (var writer = new StreamWriter("output.csv", true))
-            {
-                writer.WriteLine(string.Join(",", DtwAverage.Average(input).Select(a => Convert.ToString(a, CultureInfo.InvariantCulture))));
-            }
+            Translator.LearnBase("input_learn.csv", 200, 2);
+            Console.WriteLine("Base succesfully learned");
+            Translator.FetchBase();
+            Console.WriteLine("Base succesfully fetched");
+            Translator.TranslateSeries("input_trans.csv", "output_trans.csv");
+            Console.WriteLine("Series succesfully translated");
         }
     }
 }

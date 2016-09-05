@@ -33,14 +33,12 @@
   </PropertyGroup>
   <ItemGroup>
     <None Include="App.config" />
-    <None Include="sample_input.csv">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Centers.cs" />
+    <Compile Include="Translator.cs" />
     <Compile Include="DtwAverage.cs" />
     <Compile Include="Program.cs" />
-    <Compile Include="TimeSerie.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />
