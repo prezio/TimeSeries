@@ -8,7 +8,7 @@ def main(argv):
 	data = np.genfromtxt("centers.csv", delimiter = ',')
 	
 	for i in range(data.shape[0]):
-		outputPath = "centers/" + str(i) + ".png"
+		outputPath = "centerslearn/" + str(i) + ".png"
 		plt.plot(data[i])
 		plt.savefig(outputPath)
 		plt.clf()

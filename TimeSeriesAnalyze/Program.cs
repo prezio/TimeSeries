@@ -12,11 +12,11 @@ namespace TimeSeriesAnalyze
     {
         public static void Main(string[] args)
         {
-            Translator.LearnBase("input_learn.csv", 200, 2);
+            Translator.LearnBase("learn_ready.csv", 40, 2);
             Console.WriteLine("Base succesfully learned");
             Translator.FetchBase();
             Console.WriteLine("Base succesfully fetched");
-            Translator.TranslateSeries("input_trans.csv", "output_trans.csv");
+            Translator.TranslateSeries("translate_ready.csv", "translate_final.csv");
             Console.WriteLine("Series succesfully translated");
         }
     }

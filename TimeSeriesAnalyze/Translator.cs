@@ -86,7 +86,7 @@ namespace TimeSeriesAnalyze
             int step = serie.Length / dimension;
             for (int i=0; i<serie.Length; i+=step)
             {
-                var window = serie.Skip(i).Take(step).ToArray();
+                decimal[] window = DtwAverage.Normalize(serie.Skip(i).Take(step).ToArray());
                 ret.Add(Classify(window));
             }
             return ret.ToArray();

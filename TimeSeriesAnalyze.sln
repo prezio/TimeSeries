@@ -13,6 +13,8 @@ Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "Plot", "Plot\Plot.pyproj", 
 EndProject
 Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "TsneVisualization", "TsneVisualization\TsneVisualization.pyproj", "{4C1A1FAB-8072-4F72-90B9-7C87A72D41AB}"
 EndProject
+Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "Normalizer", "Normalizer\Normalizer.pyproj", "{03879387-FBC0-4C4E-A542-31D7212AC417}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -31,6 +33,8 @@ Global
 		{5840B6AC-CA23-47CB-AA7B-EE4EA596AC00}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4C1A1FAB-8072-4F72-90B9-7C87A72D41AB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{4C1A1FAB-8072-4F72-90B9-7C87A72D41AB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{03879387-FBC0-4C4E-A542-31D7212AC417}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{03879387-FBC0-4C4E-A542-31D7212AC417}.Release|Any CPU.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

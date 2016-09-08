@@ -7,7 +7,7 @@ def main(argv):
 	data = np.genfromtxt("input.csv", delimiter = ',')
 	results = np.zeros(data.shape)
 
-	radius = 10
+	radius = 20
 	for i in range(data.shape[0]):
 		for j in range(len(data[i])):
 			amount = 0

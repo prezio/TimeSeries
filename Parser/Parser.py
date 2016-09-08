@@ -63,7 +63,7 @@ def main(argv):
 	csvfile = open('t_TradeReport.csv', 'rb')
 	reader = csv.reader(csvfile)
 
-	data = parse_from_csv(reader, 200, 5, 4, 1)
+	data = parse_from_csv(reader, 100, 5, 20, -1)
 	
 	np.savetxt("output.csv", data, delimiter=",")
 	pass

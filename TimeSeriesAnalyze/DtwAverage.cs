@@ -34,13 +34,19 @@ namespace TimeSeriesAnalyze
                     var mini = prec.Min(a1 => a1.Item1);
                     int index = prec.IndexOf(prec.Where(k => k.Item1 == mini).First());
 
-                    m[i, j] = new Tuple<decimal, Tuple<int, int>>(mini + Dist(a[i-1], b[j-1]),
+                    m[i, j] = new Tuple<decimal, Tuple<int, int>>(mini + Dist(a[i - 1], b[j - 1]),
                         index == 0 ? new Tuple<int, int>(i - 1, j) :
                         index == 1 ? new Tuple<int, int>(i, j - 1) :
                         new Tuple<int, int>(i - 1, j - 1));
                 }
             }
             return m;
+        }
+
+        public static decimal[] Normalize(decimal[] a)
+        {
+            decimal avg = a.Average();
+            return a.Select(x => x - avg).ToArray();
         }
 
         public static decimal Dtw2(decimal[] a, decimal[] b)
